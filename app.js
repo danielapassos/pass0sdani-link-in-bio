@@ -4,6 +4,8 @@ const bodyParser = require("body-parser")
 const request = require("request")
 const https = require("https");
 //const twilio = require('twilio');
+require("dotenv").config();
+
 
 //const accountSid = process.env.accountSid; // Account SID from www.twilio.com/console
 //const authToken = process.env.authToken; // Auth Token from www.twilio.com/console
@@ -42,7 +44,7 @@ app.post("/", function(req, res){
 
     const options = {
         method: "POST",
-        auth: "danielapassos:c74fbbe308accea9cab89bebf58f54d3-us1"
+        auth: `danielapassos:`+process.env.MAILCHIMP_KEY
     }
 
     const jsonData = JSON.stringify(data);

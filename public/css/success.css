@@ -53,3 +53,24 @@ body {
     font-weight: normal;
 }
 
+.link2{
+    margin-top:10px;
+    text-align: center;
+    text-decoration: none; 
+
+}
+
+.link2 i:hover{
+    transform: scale(1.3);
+}
+
+.link2 i{
+    transition: 0.3s;
+}
+
+.link2 a{
+    color: #5C5C5C;
+    font-size: 23px;
+    align-items: center;
+    text-decoration: none; 
+}
