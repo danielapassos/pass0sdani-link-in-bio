@@ -3,12 +3,7 @@ const express = require("express")
 const bodyParser = require("body-parser")
 const request = require("request")
 const https = require("https");
-//const twilio = require('twilio');
 require("dotenv").config();
-
-
-//const accountSid = process.env.accountSid; // Account SID from www.twilio.com/console
-//const authToken = process.env.authToken; // Auth Token from www.twilio.com/console
 
 
 const app = express();
@@ -57,16 +52,6 @@ app.post("/", function(req, res){
             const phoneNumber = req.body.phoneNumber
             res.sendFile(__dirname + "/success.html")
 
-            /*
-            client.messages
-            .create({
-                from: 'whatsapp:+16067755483',
-                body: 'bemvindo_inscrito',
-                to: `whatsapp:${phoneNumber}`
-              })
-            .then(message => console.log(message.sid));
-              */
-
         } else {
             res.sendFile(__dirname + "/failure.html")
         }
@@ -84,8 +69,6 @@ app.post("/", function(req, res){
 app.post("/failure", function(req, res){
 })
 
-//const client = require('twilio')(accountSid, authToken);
-
 
 app.post("/success", function(req, res){
     res.redirect("/")
@@ -95,9 +78,3 @@ app.post("/success", function(req, res){
 app.listen(3000, function(){
     console.log("Server is running on port 3000")
 })
-
-//Mailchimp key
-//c74fbbe308accea9cab89bebf58f54d3-us1
-
-// Audience ID
-// 2a9485bf9c
